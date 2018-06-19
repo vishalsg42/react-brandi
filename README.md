@@ -1,4 +1,4 @@
-#React Brandi Template
+##React Brandi Template
 
 ## Folder Structure
 
