@@ -17,54 +17,71 @@ const galleryItem = [
   {
     gallery_img : Kong_img,
     gallery_title: 'Labore et dolore magnam',
-    gallery_description: 'Photography'
+    gallery_description: 'Photography',
+    gallery_category: 'branding'
   },
   {
     gallery_img : Stork_img,
     gallery_title: 'Labore et dolore magnam',
-    gallery_description: 'Photography'
-  },
-  {
-    gallery_img : Militant_img,
-    gallery_title: 'Labore et dolore magnam',
-    gallery_description: 'Photography'
+    gallery_description: 'Photography',
+    gallery_category: 'web'
   },
   {
     gallery_img : River_img,
     gallery_title: 'Labore et dolore magnam',
-    gallery_description: 'Photography'
-  },
-  {
-    gallery_img : Ciel_img,
-    gallery_title: 'Labore et dolore magnam',
-    gallery_description: 'Photography'
-  },
-  {
-    gallery_img : Abstract_img,
-    gallery_title: 'Labore et dolore magnam',
-    gallery_description: 'Photography'
-  },
-  {
-    gallery_img : Toon_img,
-    gallery_title: 'Labore et dolore magnam',
-    gallery_description: 'Photography'
+    gallery_description: 'Photography',
+    gallery_category: 'logo design'
   },
   {
     gallery_img : Drop_img,
     gallery_title: 'Labore et dolore magnam',
-    gallery_description: 'Photography'
-  }
+    gallery_description: 'Photography',
+    gallery_category: 'Photography'
+  },
+  {
+    gallery_img : Militant_img,
+    gallery_title: 'Labore et dolore magnam',
+    gallery_description: 'Photography',
+    gallery_category: 'branding'
+  },
+  {
+    gallery_img : Ciel_img,
+    gallery_title: 'Labore et dolore magnam',
+    gallery_description: 'Photography',
+    gallery_category: 'web'
+  },
+  {
+    gallery_img : Abstract_img,
+    gallery_title: 'Labore et dolore magnam',
+    gallery_description: 'Photography',
+    gallery_category: 'logo design'
+  },
+  {
+    gallery_img : Toon_img,
+    gallery_title: 'Labore et dolore magnam',
+    gallery_description: 'Photography',
+    gallery_category: 'Photography'
+  },
 ]
 
 
 class Works extends Component {
-  // constructor() {
-  //   super()
-  //   // this.getClicked = this.getClicked.bind(this,'parameter')
-  // }
-  getClicked (e) {
+  constructor() {
+    super()
+    this.state = { galleryItem: galleryItem }
+    // this.getClicked = this.getClicked.bind(this,'parameter')
+  }
+  getClicked =(e,data)=> {
     e.preventDefault();
-    console.log(e.target.className);
+    let item = galleryItem;
+    let filter = e.target.dataset.filter;
+    let galleryFinalitem = item.filter((gItem)=>{
+      return filter === 'all' ? gItem : gItem.gallery_category.toLowerCase() === filter.toLowerCase();
+    })
+    this.setState({
+      galleryItem : galleryFinalitem
+    })
+
   };
   render() {
     return (
@@ -87,23 +104,23 @@ class Works extends Component {
 
             <ul className="work-nav">
               <li>
-                <a href="#FIXME" className="active"  onClick={this.getClicked} title="All">all</a>
+                <a href="#FIXME" className="active" data-filter='all'  onClick={(e)=> this.getClicked(e)} title="All">all</a>
               </li>
               <li>
-                <a href="#FIXME" title="Branding" >branding</a>
+                <a href="#FIXME" data-filter='branding' onClick={(e)=> this.getClicked(e)} title="Branding" >branding</a>
               </li>
               <li>
-                <a href="#FIXME" title="web" >web</a>
+                <a href="#FIXME" data-filter='web'  onClick={(e)=> this.getClicked(e)} title="web" >web</a>
               </li>
               <li>
-                <a href="#FIXME" title="Logo Design" >logo design</a>
+                <a href="#FIXME" data-filter='logo design' onClick={(e)=> this.getClicked(e)}  title="Logo Design" >logo design</a>
               </li>
               <li>
-                <a href="#FIXME" title="Photography"  >photography</a>
+                <a href="#FIXME" data-filter='photography' onClick={(e)=> this.getClicked(e)} title="Photography"  >photography</a>
               </li>
             </ul>
           </div>
-          <GalleryBox galleryData={galleryItem} icon={Icon_Eye}/>
+          <GalleryBox galleryData={this.state.galleryItem}  icon={Icon_Eye}/>
         </section>
     );
   }

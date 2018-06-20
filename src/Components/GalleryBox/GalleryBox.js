@@ -6,7 +6,7 @@ const GalleryBox = (props)=> {
   let galleryItem = galleryData.map((item,index)=>{
     return (
       <div key={index} className="gallery-box">
-        <img src={item.gallery_img} alt="Kon" className="gallery-img" className="kongAnimal" />
+        <img src={item.gallery_img} alt="Kon" className="gallery-img"  />
         <div className="overlay">
           <div className="overlay-content">
             <img src={props.icon} alt="Eye icon" />

@@ -19,7 +19,7 @@ class Header extends Component {
         <div className="wrapper cf">
           <Logobox logoImg={Brandilogo} imgtext={'Brandi Logo'}/>
           <nav>
-            <a href="#FIXME" className="fa fa-bars nav-menu"></a>
+            
             <NavListItem navText={navItem} />
           </nav>
         </div>
