@@ -1,13 +1,60 @@
 import React, { Component } from 'react';
+import TeamBox from '../TeamBox/TeamBox';
+
 import Seperator from '../../assets/images/seperator.png';
 import John_Img from '../../assets/images/image_John.jpg';
 import Chystine_Img from '../../assets/images/image_Chystine.jpg';
 import Martin_Img from '../../assets/images/image_Martin.jpg';
 import Steve_Img from '../../assets/images/image_Steve.jpg';
-import Twitter_Img from '../../assets/images/icon_Twitter.png';
-import FB_Img from '../../assets/images/icon_FB.png';
-import Google_Img from '../../assets/images/icon_G.png';
 
+
+
+const teamBox = [
+  {
+    team_img : John_Img,
+    team_name: 'John Filmr Doe',
+    team_job_post: 'Managing Director',
+    team_title: 'Labore et dolore magnam',
+    team_social: {
+      twitter: 'twitter.com',
+      facebook: 'facebook.com',
+      google_plus: 'google.com'
+    }
+  },
+  {
+    team_img : Martin_Img,
+    team_name: 'John Filmr Doe',
+    team_job_post: 'Lead Developer',
+    team_title: 'Labore et dolore magnam',
+    team_social: {
+      twitter: 'twitter.com',
+      facebook: 'facebook.com',
+      google_plus: 'google.com'
+    }
+  },
+  {
+    team_img : Steve_Img,
+    team_name: 'John Filmr Doe',
+    team_job_post: 'Sr. UI Designer',
+    team_title: 'Labore et dolore magnam',
+    team_social: {
+      twitter: 'twitter.com',
+      facebook: 'facebook.com',
+      google_plus: 'google.com'
+    }
+  },
+  {
+    team_img : Chystine_Img,
+    team_name: 'John Filmr Doe',
+    team_job_post: 'Managing Director',
+    team_title: 'Labore et dolore magnam',
+    team_social: {
+      twitter: 'twitter.com',
+      facebook: 'facebook.com',
+      google_plus: 'google.com'
+    }
+  },
+]
 class Team extends Component {
   render() {
     return (
@@ -22,132 +69,9 @@ class Team extends Component {
           </p>
 
           <div className="team-content">
-            <div className="team-box">
-              <div className="team-img">
-                <img src={John_Img} alt="jhonyMember"/>
-                <div className="overlay">
-                  <div className="overlay-content">
-                    <p>Nemo enim ipsam voluptatem quia voluptas</p>
-                    <p>sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione, voluptatem</p>
-                    <ul className="socila-nav">
-                      <li>
-                        <a href="#FIXME" title="Twitter">
-                          <img src={Twitter_Img} alt="twitter"/>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#FIXME" title="Facebook">
-                          <img src={FB_Img} alt="facebook"/>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#FIXME" title="Google Plus">
-                          <img src={Google_Img} alt="googlePlus"/>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <h3>John Filmer Doe</h3>
-              <p>Managing Director</p>
-            </div>
-            <div className="team-box">
-              <div className="team-img">
-                <img src={Chystine_Img} alt="ChystineMember"/>
-                <div className="overlay">
-                  <div className="overlay-content">
-                    <p>Nemo enim ipsam voluptatem quia voluptas</p>
-                    <p>sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione, voluptatem</p>
-                    <ul className="socila-nav">
-                      <li>
-                        <a href="#FIXME" title="Twitter">
-                          <img src={Twitter_Img} alt="twitter"/>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#FIXME" title="Facebook">
-                          <img src={FB_Img} alt="facebook"/>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#FIXME" title="Google Plus">
-                          <img src={Google_Img} alt="googlePlus"/>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <h3>Chystine Hineu</h3>
-              <p>Lead Designer</p>
-            </div>
-            <div className="team-box">
-              <div className="team-img">
-                <img src={Martin_Img} alt="martinMember"/>
-                <div className="overlay">
-                  <div className="overlay-content">
-                    <p>Nemo enim ipsam voluptatem quia voluptas</p>
-                    <p>sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione, voluptatem</p>
-                    <ul className="socila-nav">
-                      <li>
-                        <a href="#FIXME" title="Twitter">
-                          <img src={Twitter_Img} alt="twitter"/>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#FIXME" title="Facebook">
-                          <img src={FB_Img} alt="facebook"/>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#FIXME" title="Google Plus">
-                          <img src={Google_Img} alt="googlePlus"/>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <h3>Martin Matrone</h3>
-              <p>Lead Developer</p>
-            </div>
-            <div className="team-box">
-              <div className="team-img">
-                <img src={Steve_Img} alt="steveMember"/>
-                <div className="overlay">
-                  <div className="overlay-content">
-                    <p>Nemo enim ipsam voluptatem quia voluptas</p>
-                    <p>sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione, voluptatem</p>
-                    <ul className="socila-nav">
-                      <li>
-                        <a href="#FIXME" title="Twitter">
-                          <img src={Twitter_Img} alt="twitter"/>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#FIXME" title="Facebook">
-                          <img src={FB_Img} alt="facebook"/>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#FIXME" title="Google Plus">
-                          <img src={Google_Img} alt="googlePlus"/>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <h3>Steve Faulkin</h3>
-              <p>Sr. UI Designer</p>
-            </div>
+            <TeamBox  teamObj={teamBox}/>
           </div>
-          <div className="tab-box">
-            <span className="tab-dot fa fa-circle"></span>
-            <span className="tab-dot fa fa-circle"></span>
-            <span className="tab-dot fa fa-circle"></span>
-          </div>
+      
         </div>
       </section>
     );

@@ -68,18 +68,23 @@ const galleryItem = [
 class Works extends Component {
   constructor() {
     super()
-    this.state = { galleryItem: galleryItem }
-    // this.getClicked = this.getClicked.bind(this,'parameter')
+    this.state = {
+      galleryItem: galleryItem,
+      isActive: false
+    }
+    this.textInput = React.createRef();
   }
-  getClicked =(e,data)=> {
+  getClicked =(e)=> {
     e.preventDefault();
     let item = galleryItem;
     let filter = e.target.dataset.filter;
+    let isActive = e.target;
+    console.log();
     let galleryFinalitem = item.filter((gItem)=>{
       return filter === 'all' ? gItem : gItem.gallery_category.toLowerCase() === filter.toLowerCase();
     })
     this.setState({
-      galleryItem : galleryFinalitem
+      galleryItem : galleryFinalitem,
     })
 
   };
@@ -104,19 +109,19 @@ class Works extends Component {
 
             <ul className="work-nav">
               <li>
-                <a href="#FIXME" className="active" data-filter='all'  onClick={(e)=> this.getClicked(e)} title="All">all</a>
+                <a href="#FIXME" ref='all'  className={this.isActive ? 'active' : ''} data-filter='all'  onClick={(e)=> this.getClicked(e)} title="All">all</a>
               </li>
               <li>
-                <a href="#FIXME" data-filter='branding' onClick={(e)=> this.getClicked(e)} title="Branding" >branding</a>
+                <a href="#FIXME" className={this.isActive ? 'active' : ''} data-filter='branding' onClick={(e)=> this.getClicked(e)} title="Branding" >branding</a>
               </li>
               <li>
-                <a href="#FIXME" data-filter='web'  onClick={(e)=> this.getClicked(e)} title="web" >web</a>
+                <a href="#FIXME" className={this.isActive ? 'active' : ''} data-filter='web'  onClick={(e)=> this.getClicked(e)} title="web" >web</a>
               </li>
               <li>
-                <a href="#FIXME" data-filter='logo design' onClick={(e)=> this.getClicked(e)}  title="Logo Design" >logo design</a>
+                <a href="#FIXME" className={this.isActive ? 'active' : ''} data-filter='logo design' onClick={(e)=> this.getClicked(e)}  title="Logo Design" >logo design</a>
               </li>
               <li>
-                <a href="#FIXME" data-filter='photography' onClick={(e)=> this.getClicked(e)} title="Photography"  >photography</a>
+                <a href="#FIXME" className={this.isActive ? 'active' : ''} data-filter='photography' onClick={(e)=> this.getClicked(e)} title="Photography"  >photography</a>
               </li>
             </ul>
           </div>
