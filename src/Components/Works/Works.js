@@ -78,7 +78,6 @@ class Works extends Component {
     e.preventDefault();
     let item = galleryItem;
     let filter = e.target.dataset.filter;
-    let isActive = e.target;
     console.log();
     let galleryFinalitem = item.filter((gItem)=>{
       return filter === 'all' ? gItem : gItem.gallery_category.toLowerCase() === filter.toLowerCase();
